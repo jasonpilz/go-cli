@@ -1,3 +1,5 @@
 # Go CLI
 
-> Command line interface template in golang
+> Command line interface TEMPLATE in golang
+
+## Goreleaser

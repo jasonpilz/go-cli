@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ou
+set -eu
 
 # TEMPLATE_TODO: Update ORG and REPO variables
 ORG=jasonpilz

@@ -1,3 +1,4 @@
+# TEMPLATE_TODO: Replace instances of 'go-cli', 'cli' and 'jasonpilz'
 project_name: go-cli
 
 before:

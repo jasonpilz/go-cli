@@ -2,7 +2,7 @@
 
 set -ou
 
-# TEMPLATE TODO: Update ORG and REPO variables
+# TEMPLATE_TODO: Update ORG and REPO variables
 ORG=jasonpilz
 REPO=go-cli
 

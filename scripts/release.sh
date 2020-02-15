@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo
+set -eu
 
 if [[ ! -x $(command -v goreleaser) ]] ; then
   echo "==> Install https://goreleaser.com/install/ then run again"

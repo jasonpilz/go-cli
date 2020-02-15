@@ -1,0 +1,56 @@
+# TEMPLATE_TODO: Replace instances of 'go-cli', 'cli' and 'jasonpilz'
+project_name: go-cli
+
+before:
+  hooks:
+    - make docker/login
+
+builds:
+  - main: ./cmd/cli/main.go
+    binary: cli
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -v
+    ldflags:
+      - -X github.com/jasonpilz/go-cli/spec.Build={{ .ShortCommit }}
+      - -X github.com/jasonpilz/go-cli/spec.Major={{ .Major }}
+      - -X github.com/jasonpilz/go-cli/spec.Minor={{ .Minor }}
+      - -X github.com/jasonpilz/go-cli/spec.Patch={{ .Patch }}
+      - -X github.com/jasonpilz/go-cli/spec.Label=release
+    goos:
+      - windows
+      - darwin
+      - linux
+    ignore:
+      - goos: darwin
+        goarch: 386
+
+archives:
+  - name_template: "go-cli-{{ .Version }}-{{ .Os }}-{{ .Arch }}"
+    files: [workaround-to-include-only-the-binary*]
+    wrap_in_directory: false
+    format_overrides:
+      - goos: windows
+        format: zip
+
+checksum:
+  name_template: "go-cli-{{ .Version }}-checksums.sha256"
+
+snapshot:
+  name_template: "{{ .Tag }}-next"
+
+dockers:
+  - dockerfile: Dockerfile.goreleaser
+    image_templates:
+      - "jasonpilz/go-cli:latest"
+      - "jasonpilz/go-cli:{{ .Major }}-latest"
+      - "jasonpilz/go-cli:{{ .Version }}"
+
+release:
+  github:
+    owner: jasonpilz
+    name: go-cli
+
+changelog:
+  skip: true

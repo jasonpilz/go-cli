@@ -1,0 +1,6 @@
+Dockerfile
+.dockerignore
+.docker-compose*
+tmp
+pids
+.DS_Store

@@ -15,15 +15,15 @@ import (
 )
 
 const (
-	// Repo is the github repository
+	// TEMPLATE_TODO Repo is the github repository
 	Repo = "go-cli"
-	// Owner is the github repository owner
+	// TEMPLATE_TODO Owner is the github repository owner
 	Owner = "jasonpilz"
 )
 
 var (
+	// Github token required in environment if repo is private
 	githubToken = os.Getenv("GITHUB_TOKEN")
-
 	// Set at build time from goreleaser using ldflags
 	Build, Major, Minor, Patch, Label string
 	// Version is the application's current version
@@ -57,7 +57,7 @@ func setAppVersion() {
 		AppVersion.Patch = i
 	}
 	if Label == "" {
-		AppVersion.Label = "dev"
+		AppVersion.Label = "development"
 	} else {
 		AppVersion.Label = Label
 	}

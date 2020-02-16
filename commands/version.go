@@ -3,6 +3,7 @@ package commands
 import (
 	"fmt"
 
+	// TEMPLATE_TODO: update spec package path
 	"github.com/jasonpilz/go-cli/spec"
 	"github.com/spf13/cobra"
 )

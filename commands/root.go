@@ -9,6 +9,7 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
+	// TEMPLATE_TODO: Update help descriptions
 	Use:   "cli",
 	Short: "cli is a command line interface for ...",
 	Long:  "cli is a command line interface for ...",

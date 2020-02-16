@@ -1,4 +1,4 @@
-# Go CLI
+# GO CLI
 
 > Template for building command-line interfaces in golang.
 

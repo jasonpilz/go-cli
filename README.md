@@ -2,7 +2,7 @@
 
 > Template for building command-line interfaces in golang.
 
-## Template Use
+## Template Usage
 
 This repo is intended to be used as [a template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/)
 for building go-based command-line interfaces.
@@ -10,13 +10,20 @@ for building go-based command-line interfaces.
 See the [github docs](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 For more info.
 
-After creating a new project from this template, some customization will be required.
-To aid in identifying and locating these items, comments including the words `TEMPLATE_TODO`
-have been added to the codebase. Using your editor of choice, search/grep for this tag
-and make adjustments as indicated by comments at those locations. These comments can
-then be deleted if desired.
+After generating a new project or repo from this template, some customization will
+be required. These items include:
 
-### Releasing
+1. `TEMPLATE_TODO` - To aid in identifying and locating these items, comments including
+the words `TEMPLATE_TODO` have been added to the codebase. Using your editor of choice,
+search/grep for this tag and make adjustments as indicated by comments at those locations.
+These comments can then be deleted if desired.
+2. `README.md` - Requires customization, including removal of this section and the
+main heading.
+3. `go.mod` and `go.sum` - [go modules](https://github.com/golang/go/wiki/Modules)
+are used for denpendency management. Delete the existing `go.*` files and run
+`go mod init` and `go mod tidy`.
+
+## Releasing
 
 > This project follows [semantic versioning](semver.org).
 
